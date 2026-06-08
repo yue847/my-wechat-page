@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朴闻生物科技 | POWEN BIOLOGY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --peach-jade: #F3E5E0;
+            --peach-soft: #F8EDE8;
+            --peach-deep: #F0D5CC;
+            --bamboo-white: #FAF9F6;
+            --ink-gray: #5C5C5C;
+            --ink-light: #8A8A8A;
+            --tea-gold: #B8956A;
+            --tea-gold-deep: #A08055;
+            --herbal-green: #C5D5C0;
+            --tech-blue: #C8D5E0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bamboo-white);
+            color: var(--ink-gray);
+            line-height: 1.8;
+            font-size: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bamboo-white);
+            box-shadow: 0 0 60px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+
+        /* ===== 工笔画装饰元素 ===== */
+        .gongbi-line {
+            width: 100%;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40'%3E%3Cpath d='M0,20 Q50,5 100,20 T200,20 T300,20 T400,20' fill='none' stroke='%23B8956A' stroke-width='0.8' opacity='0.3'/%3E%3Cpath d='M0,20 Q50,35 100,20 T200,20 T300,20 T400,20' fill='none' stroke='%23B8956A' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E") center no-repeat;
+            background-size: 400px 40px;
+        }
+
+        .gongbi-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gongbi-divider::before,
+        .gongbi-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--tea-gold), transparent);
+            opacity: 0.4;
+        }
+
+        .gongbi-divider svg {
+            width: 40px;
+            height: 20px;
+            opacity: 0.5;
+        }
+
+        /* ===== 板块一：品牌主视觉区 ===== */
+        .hero {
+            background: linear-gradient(180deg, var(--bamboo-white) 0%, var(--peach-soft) 100%);
+            padding: 100px 60px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -80px;
+            width: 300px;
+            height: 300px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100,40 C80,20 60,40 70,60 C50,50 30,70 50,90 C30,100 40,130 60,120 C50,140 70,160 90,140 C100,160 130,150 120,130 C140,140 160,110 140,100 C160,80 140,60 120,70 C130,50 110,30 100,40Z' fill='none' stroke='%23F3E5E0' stroke-width='1.5' opacity='0.6'/%3E%3Cpath d='M90,80 Q100,70 110,80 Q100,90 90,80' fill='%23F3E5E0' opacity='0.3'/%3E%3Cpath d='M70,100 Q80,90 90,100' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3Cpath d='M110,100 Q120,90 130,100' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3Cpath d='M100,110 Q100,130 100,150' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3Ccircle cx='85' cy='75' r='2' fill='%23F3E5E0' opacity='0.3'/%3E%3Ccircle cx='115' cy='75' r='2' fill='%23F3E5E0' opacity='0.3'/%3E%3Ccircle cx='100' cy='65' r='1.5' fill='%23F3E5E0' opacity='0.3'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            opacity: 0.6;
+            transform: rotate(15deg);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -60px;
+            width: 250px;
+            height: 250px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M50,150 Q70,130 90,150 Q110,130 130,150' fill='none' stroke='%23F3E5E0' stroke-width='1.2' opacity='0.5'/%3E%3Cpath d='M60,150 Q70,110 80,150' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3Cpath d='M100,150 Q110,100 120,150' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3Cpath d='M140,150 Q150,120 160,150' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            opacity: 0.5;
+        }
+
+        .hero-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--tea-gold);
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--ink-light);
+            letter-spacing: 0.2em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-slogan {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 22px;
+            color: var(--tea-gold);
+            letter-spacing: 0.3em;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 0 30px;
+        }
+
+        .hero-slogan::before,
+        .hero-slogan::after {
+            content: '◆';
+            font-size: 8px;
+            color: var(--tea-gold);
+            opacity: 0.5;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero-slogan::before { left: 0; }
+        .hero-slogan::after { right: 0; }
+
+        /* ===== 通用板块样式 ===== */
+        .section {
+            padding: 70px 60px;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 24px;
+            color: var(--tea-gold);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 24px;
+            background: var(--tea-gold);
+            opacity: 0.6;
+        }
+
+        .section-body {
+            font-size: 15px;
+            line-height: 2;
+            color: var(--ink-gray);
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: var(--peach-soft);
+            border-left: 3px solid var(--tea-gold);
+            padding: 20px 25px;
+            margin: 25px 0;
+            font-size: 15px;
+            color: var(--ink-gray);
+            line-height: 1.8;
+        }
+
+        /* ===== 板块二：品牌理念 ===== */
+        .philosophy {
+            background: var(--white);
+            position: relative;
+        }
+
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            width: 150px;
+            height: 150px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Cpath d='M75,30 Q60,50 75,70 Q90,50 75,30' fill='none' stroke='%23F3E5E0' stroke-width='1.5' opacity='0.6'/%3E%3Cpath d='M75,70 Q55,85 75,100 Q95,85 75,70' fill='none' stroke='%23F3E5E0' stroke-width='1.2' opacity='0.5'/%3E%3Cpath d='M75,100 Q60,115 75,130' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3Cpath d='M60,50 Q45,60 55,75' fill='none' stroke='%23F3E5E0' stroke-width='0.8' opacity='0.3'/%3E%3Cpath d='M90,50 Q105,60 95,75' fill='none' stroke='%23F3E5E0' stroke-width='0.8' opacity='0.3'/%3E%3Ccircle cx='75' cy='45' r='2' fill='%23F3E5E0' opacity='0.4'/%3E%3Ccircle cx='65' cy='60' r='1.5' fill='%23F3E5E0' opacity='0.3'/%3E%3Ccircle cx='85' cy='60' r='1.5' fill='%23F3E5E0' opacity='0.3'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            opacity: 0.7;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .philosophy-text {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .philosophy-deco {
+            width: 100px;
+            height: 280px;
+            position: relative;
+            opacity: 0.6;
+        }
+
+        .philosophy-deco svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .brand-name-explain {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 18px;
+            color: var(--tea-gold);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .quote {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--tea-gold);
+            font-size: 16px;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* ===== 板块三：专业背书 ===== */
+        .science {
+            background: linear-gradient(180deg, var(--white) 0%, #F5F5F5 100%);
+            position: relative;
+        }
+
+        .science::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(184,149,106,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(184,149,106,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(184,149,106,0.15);
+        }
+
+        .credential-item:last-child {
+            border-bottom: none;
+        }
+
+        .credential-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--peach-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Serif SC', serif;
+            color: var(--tea-gold);
+            font-size: 20px;
+            flex-shrink: 0;
+            border: 1px solid rgba(184,149,106,0.2);
+        }
+
+        .credential-text h4 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 17px;
+            color: var(--tea-gold);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .credential-text p {
+            font-size: 14px;
+            color: var(--ink-gray);
+            line-height: 1.8;
+        }
+
+        /* ===== 板块四：四大产品矩阵总介绍（悬停交互） ===== */
+        .matrix-overview {
+            background: var(--peach-soft);
+            text-align: center;
+            padding: 80px 60px;
+            position: relative;
+        }
+
+        .matrix-overview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60'%3E%3Cpath d='M0,30 Q100,10 200,30 T400,30' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.5'/%3E%3Cpath d='M0,35 Q100,55 200,35 T400,35' fill='none' stroke='%23F3E5E0' stroke-width='0.8' opacity='0.3'/%3E%3C/svg%3E") repeat-x;
+            background-size: 400px 60px;
+        }
+
+        .matrix-overview .section-title {
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .matrix-overview .section-title::before {
+            display: none;
+        }
+
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .season-card {
+            background: var(--white);
+            padding: 40px 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 200px;
+        }
+
+        .season-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--tea-gold);
+            opacity: 0.4;
+            transition: all 0.5s ease;
+        }
+
+        .season-card.active::before {
+            opacity: 1;
+            height: 5px;
+        }
+
+        .season-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(184,149,106,0.15);
+        }
+
+        .season-card:hover::before {
+            opacity: 1;
+            height: 5px;
+            background: var(--tea-gold-deep);
+        }
+
+        .season-card:hover .season-detail {
+            opacity: 1;
+            max-height: 200px;
+            margin-top: 15px;
+            transform: translateY(0);
+        }
+
+        .season-card:hover .season-icon {
+            transform: scale(1.1);
+            color: var(--tea-gold-deep);
+        }
+
+        .season-icon {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 42px;
+            color: var(--tea-gold);
+            margin-bottom: 15px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            display: block;
+        }
+
+        .season-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 22px;
+            color: var(--tea-gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .season-theme {
+            font-size: 14px;
+            color: var(--ink-light);
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        .season-card:hover .season-theme {
+            color: var(--tea-gold);
+        }
+
+        .season-detail {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(10px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 13px;
+            color: var(--ink-gray);
+            line-height: 1.8;
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .season-detail p {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            border-left: 2px solid var(--peach-jade);
+        }
+
+        .season-tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 16px;
+            background: var(--peach-soft);
+            color: var(--tea-gold);
+            font-size: 12px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .season-card:hover .season-tag {
+            background: var(--tea-gold);
+            color: var(--white);
+        }
+
+        .season-card.active {
+            background: var(--white);
+            box-shadow: 0 8px 30px rgba(184,149,106,0.12);
+        }
+
+        .season-card.active .season-detail {
+            opacity: 1;
+            max-height: 200px;
+            margin-top: 15px;
+            transform: translateY(0);
+        }
+
+        /* ===== 板块五：春系列核心产品（圆盘成分矩阵） ===== */
+        .spring-product {
+            background: var(--white);
+            padding: 80px 60px;
+            position: relative;
+        }
+
+        .spring-product::before {
+            content: '';
+            position: absolute;
+            bottom: 40px;
+            right: 30px;
+            width: 180px;
+            height: 180px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cpath d='M90,40 C70,30 50,50 60,70 C40,60 30,90 50,100 C35,115 50,140 70,130 C60,150 90,160 100,140 C115,155 140,140 130,120 C150,125 160,95 140,85 C155,70 135,45 120,55 C125,35 100,25 90,40Z' fill='none' stroke='%23F3E5E0' stroke-width='1.5' opacity='0.5'/%3E%3Cpath d='M90,70 Q80,85 90,100 Q100,85 90,70' fill='none' stroke='%23F3E5E0' stroke-width='1' opacity='0.4'/%3E%3Cpath d='M75,90 Q65,100 75,110' fill='none' stroke='%23F3E5E0' stroke-width='0.8' opacity='0.3'/%3E%3Cpath d='M105,90 Q115,100 105,110' fill='none' stroke='%23F3E5E0' stroke-width='0.8' opacity='0.3'/%3E%3Ccircle cx='90' cy='60' r='2' fill='%23F3E5E0' opacity='0.3'/%3E%3Ccircle cx='70' cy='80' r='1.5' fill='%23F3E5E0' opacity='0.3'/%3E%3Ccircle cx='110' cy='80' r='1.5' fill='%23F3E5E0' opacity='0.3'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-label {
+            display: inline-block;
+            padding: 8px 24px;
+            background: var(--peach-soft);
+            color: var(--tea-gold);
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(184,149,106,0.2);
+        }
+
+        .product-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 32px;
+            color: var(--tea-gold);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+
+        .product-positioning {
+            font-size: 16px;
+            color: var(--ink-light);
+            letter-spacing: 0.05em;
+        }
+
+        .story-section {
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 20px;
+            color: var(--tea-gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .story-title span {
+            font-size: 14px;
+            color: var(--tea-gold);
+            opacity: 0.6;
+        }
+
+        .story-text {
+            font-size: 15px;
+            line-height: 2;
+            color: var(--ink-gray);
+            text-align: justify;
+            padding-left: 20px;
+            border-left: 2px solid var(--peach-jade);
+        }
+
+        .formula-strategy {
+            background: linear-gradient(135deg, var(--peach-soft) 0%, var(--bamboo-white) 100%);
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 16px;
+            color: var(--tea-gold);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(184,149,106,0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== 圆盘成分矩阵 ===== */
+        .ingredients-matrix {
+            position: relative;
+            z-index: 1;
+        }
+
+        .matrix-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .matrix-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 30px;
+            background: var(--bamboo-white);
+            border: 1px solid rgba(184,149,106,0.2);
+            border-radius: 30px;
+            font-size: 14px;
+            color: var(--tea-gold);
+            letter-spacing: 0.1em;
+        }
+
+        .matrix-badge .divider-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--tea-gold);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .orbit-container {
+            position: relative;
+            width: 100%;
+            height: 580px;
+            margin: 50px auto 30px;
+        }
+
+        /* 轨道环 */
+        .orbit-track {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 310px;
+            height: 310px;
+            border: 1px solid rgba(184,149,106,0.12);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orbit-track-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 220px;
+            border: 1px dashed rgba(184,149,106,0.08);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* 辐射连线 */
+        .orbit-lines {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            z-index: 0;
+        }
+
+        .orbit-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 128px;
+            background: linear-gradient(to bottom, rgba(184,149,106,0.1), rgba(184,149,106,0.02));
+            transform-origin: top center;
+            margin-left: -0.5px;
+        }
+
+        /* 分类标签 */
+        .orbit-label {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 15px;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            padding: 6px 20px;
+            border-radius: 20px;
+            white-space: nowrap;
+            z-index: 1;
+        }
+
+        .orbit-label-top {
+            top: 18px;
+            color: #7A9A6A;
+            background: rgba(122,154,106,0.08);
+            border: 1px solid rgba(122,154,106,0.15);
+        }
+
+        .orbit-label-bottom {
+            bottom: 18px;
+            color: #6A8AA0;
+            background: rgba(106,138,160,0.08);
+            border: 1px solid rgba(106,138,160,0.15);
+        }
+
+        /* 中心核心 */
+        .center-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--peach-soft) 0%, var(--white) 100%);
+            border: 2.5px solid var(--tea-gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 12px;
+            box-shadow: 0 10px 35px rgba(184,149,106,0.15);
+            z-index: 3;
+            transition: all 0.4s ease;
+        }
+
+        .center-core:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 15px 45px rgba(184,149,106,0.2);
+        }
+
+        .center-core .core-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 6px;
+        }
+
+        .center-core .core-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .center-core .core-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 15px;
+            color: var(--tea-gold);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+
+        .center-core .core-tag {
+            margin-top: 4px;
+            padding: 2px 10px;
+            background: var(--tea-gold);
+            color: var(--white);
+            font-size: 10px;
+            border-radius: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        /* 卫星圆 */
+        .orbit-satellite {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            z-index: 2;
+            transition: all 0.35s ease;
+            cursor: default;
+        }
+
+        .sat-herbal {
+            border: 1.5px solid rgba(122,154,106,0.25);
+        }
+
+        .sat-herbal:hover {
+            transform: scale(1.12);
+            border-color: rgba(122,154,106,0.5);
+            box-shadow: 0 8px 25px rgba(122,154,106,0.12);
+            z-index: 4;
+        }
+
+        .sat-tech {
+            border: 1.5px solid rgba(106,138,160,0.25);
+        }
+
+        .sat-tech:hover {
+            transform: scale(1.12);
+            border-color: rgba(106,138,160,0.5);
+            box-shadow: 0 8px 25px rgba(106,138,160,0.12);
+            z-index: 4;
+        }
+
+        .sat-icon {
+            width: 28px;
+            height: 28px;
+            margin-bottom: 5px;
+        }
+
+        .sat-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sat-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 3px;
+        }
+
+        .sat-herbal .sat-name {
+            color: #7A9A6A;
+        }
+
+        .sat-tech .sat-name {
+            color: #6A8AA0;
+        }
+
+        .sat-tag {
+            font-size: 10px;
+            color: var(--ink-light);
+            letter-spacing: 0.02em;
+        }
+
+        /* 卫星位置 - 桌面端 */
+        .sat-1 { left: calc(50% - 189.2px); top: calc(50% - 132.5px); }
+        .sat-2 { left: calc(50% - 55px); top: calc(50% - 210px); }
+        .sat-3 { left: calc(50% + 79.2px); top: calc(50% - 132.5px); }
+        .sat-4 { left: calc(50% + 79.2px); top: calc(50% + 22.5px); }
+        .sat-5 { left: calc(50% - 55px); top: calc(50% + 100px); }
+        .sat-6 { left: calc(50% - 189.2px); top: calc(50% + 22.5px); }
+
+        /* ===== 板块六：夏秋冬未来布局 ===== */
+        .future-layout {
+            background: linear-gradient(180deg, var(--bamboo-white) 0%, var(--peach-soft) 100%);
+            padding: 70px 60px;
+            position: relative;
+        }
+
+        .future-layout::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40'%3E%3Cpath d='M0,20 Q50,5 100,20 T200,20' fill='none' stroke='%23B8956A' stroke-width='0.8' opacity='0.2'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+        }
+
+        .future-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 15px;
+            line-height: 2;
+            color: var(--ink-gray);
+            position: relative;
+            z-index: 1;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .future-card {
+            background: var(--white);
+            padding: 40px 25px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            opacity: 0.85;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .future-card:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(184,149,106,0.1);
+        }
+
+        .future-card::after {
+            content: '敬请期待';
+            position: absolute;
+            top: 15px;
+            right: -25px;
+            background: var(--tea-gold);
+            color: var(--white);
+            font-size: 11px;
+            padding: 3px 25px;
+            transform: rotate(45deg);
+            opacity: 0.8;
+            letter-spacing: 0.1em;
+        }
+
+        .future-season {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 28px;
+            color: var(--tea-gold);
+            margin-bottom: 10px;
+            font-weight: 700;
+            opacity: 0.7;
+        }
+
+        .future-name {
+            font-size: 18px;
+            color: var(--tea-gold);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .future-desc {
+            font-size: 14px;
+            color: var(--ink-light);
+            line-height: 1.8;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            background: var(--bamboo-white);
+            padding: 50px 60px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(184,149,106,0.15);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 30'%3E%3Cpath d='M0,15 Q30,5 60,15 T120,15 T150,15' fill='none' stroke='%23B8956A' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+        }
+
+        .footer-brand {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 20px;
+            color: var(--tea-gold);
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+
+        .footer-slogan {
+            font-size: 13px;
+            color: var(--ink-light);
+            letter-spacing: 0.15em;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--tea-gold);
+            margin: 20px auto;
+            opacity: 0.4;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .section { padding: 50px 30px; }
+            .hero { padding: 70px 30px 60px; }
+            .hero-title { font-size: 28px; }
+            .seasons-grid { grid-template-columns: repeat(2, 1fr); }
+            .future-grid { grid-template-columns: 1fr; }
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .philosophy-deco { display: none; }
+
+            /* 圆盘移动端适配 */
+            .orbit-container {
+                height: 440px;
+                margin: 30px auto;
+            }
+            .orbit-track {
+                width: 250px;
+                height: 250px;
+            }
+            .orbit-track-inner {
+                width: 170px;
+                height: 170px;
+            }
+            .orbit-line {
+                height: 100px;
+            }
+            .orbit-label {
+                font-size: 13px;
+                padding: 4px 14px;
+            }
+            .center-core {
+                width: 120px;
+                height: 120px;
+                padding: 8px;
+            }
+            .center-core .core-icon {
+                width: 32px;
+                height: 32px;
+                margin-bottom: 4px;
+            }
+            .center-core .core-name {
+                font-size: 13px;
+            }
+            .center-core .core-tag {
+                font-size: 9px;
+                padding: 1px 8px;
+            }
+            .orbit-satellite {
+                width: 88px;
+                height: 88px;
+                padding: 6px;
+            }
+            .sat-icon {
+                width: 24px;
+                height: 24px;
+                margin-bottom: 3px;
+            }
+            .sat-name {
+                font-size: 11px;
+                margin-bottom: 2px;
+            }
+            .sat-tag {
+                font-size: 9px;
+            }
+            .sat-1 { left: calc(50% - 150px); top: calc(50% - 105px); }
+            .sat-2 { left: calc(50% - 44px); top: calc(50% - 165px); }
+            .sat-3 { left: calc(50% + 62px); top: calc(50% - 105px); }
+            .sat-4 { left: calc(50% + 62px); top: calc(50% + 17px); }
+            .sat-5 { left: calc(50% - 44px); top: calc(50% + 77px); }
+            .sat-6 { left: calc(50% - 150px); top: calc(50% + 17px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 板块一：品牌主视觉区 -->
+        <section class="hero">
+            <h1 class="hero-title">朴闻 | TROUVAILLE</h1>
+            <p class="hero-subtitle">中式草本植萃 · 现代生物科技 · 分时四季护肤</p>
+            <p class="hero-slogan">既雕既琢，复归于朴</p>
+        </section>
+
+        <div class="gongbi-line"></div>
+
+        <!-- 板块二：品牌理念 -->
+        <section class="section philosophy">
+            <div class="philosophy-grid">
+                <div class="philosophy-text">
+                    <h2 class="section-title">品牌溯源 · 理念初心</h2>
+                    <div class="section-body">
+                        <p class="brand-name-explain">「朴闻」二字，双韵共生，承载品牌双重内核。</p>
+                        <p>取自《庄子·天道》<span class="quote">"既雕既琢，复归于朴"</span>坚守<strong>返璞归真、自然本真</strong>的护肤初心，摒弃多余添加剂与过度包装，以纯粹草本能量呵护原生肌肤；同时源自法语「Trouvaille」，寓意<strong>突破桎梏、遇见惊喜</strong>，以现代科研突破传统草本局限，解锁肌肤养护新可能。</p>
+                        <div class="highlight-box">
+                            品牌深耕<strong>中式草本植萃＋现代生物技术</strong>核心赛道，打破传统护肤同质化痛点，独创<strong>分季度分时护肤理念</strong>，顺应四季气候、肌肤节律变化，精准匹配不同季节肌肤诉求，打造春、夏、秋、冬四季专属产品矩阵，让护肤顺时而养、因地而愈，实现科学化、精细化、自然化的东方肌肤养护。
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-deco">
+                    <svg viewBox="0 0 100 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50,20 C30,40 20,70 50,100 C80,70 70,40 50,20Z" stroke="#F3E5E0" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <path d="M50,100 C25,120 20,160 50,180 C80,160 75,120 50,100Z" stroke="#F3E5E0" stroke-width="1.2" fill="none" opacity="0.5"/>
+                        <path d="M50,180 C35,200 30,230 50,250 C70,230 65,200 50,180Z" stroke="#F3E5E0" stroke-width="1" fill="none" opacity="0.4"/>
+                        <path d="M50,250 L50,270" stroke="#F3E5E0" stroke-width="0.8" opacity="0.3"/>
+                        <circle cx="50" cy="55" r="2" fill="#F3E5E0" opacity="0.4"/>
+                        <circle cx="40" cy="80" r="1.5" fill="#F3E5E0" opacity="0.3"/>
+                        <circle cx="60" cy="80" r="1.5" fill="#F3E5E0" opacity="0.3"/>
+                        <circle cx="35" cy="140" r="1.5" fill="#F3E5E0" opacity="0.3"/>
+                        <circle cx="65" cy="140" r="1.5" fill="#F3E5E0" opacity="0.3"/>
+                        <circle cx="50" cy="215" r="1.5" fill="#F3E5E0" opacity="0.3"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <div class="gongbi-line"></div>
+
+        <!-- 板块三：专业背书 -->
+        <section class="section science">
+            <h2 class="section-title">科研深耕 · 专业背书</h2>
+            <div class="credentials">
+                <div class="credential-item">
+                    <div class="credential-icon">创</div>
+                    <div class="credential-text">
+                        <h4>博士创始人领衔</h4>
+                        <p>品牌创始人为<strong>华南理工大学博士毕业</strong>，拥有深厚的生物工程、护肤配方研发专业积淀，为品牌产品研发、技术创新提供核心专业背书。</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">研</div>
+                    <div class="credential-text">
+                        <h4>高校实验室依托</h4>
+                        <p>品牌依托<strong>广州大学专业实验室</strong>，搭建标准化研发、检测、实验体系，严格把控原料甄选、配方调试、产品测试全流程。</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">医</div>
+                    <div class="credential-text">
+                        <h4>产学研深度融合</h4>
+                        <p>积极深耕中医药护肤领域，已筹备与<strong>广州中医药大学、广东药科大学</strong>达成深度产学研合作，融合传统中医药典籍智慧与现代生物萃取技术，实现古方草本的现代化创新、科学化落地。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块四：四大产品矩阵总介绍（悬停交互版） -->
+        <section class="matrix-overview">
+            <h2 class="section-title">四时有序 · 全域布局</h2>
+            <p style="font-size: 15px; color: var(--ink-gray); max-width: 700px; margin: 0 auto; line-height: 2;">
+                朴闻生物立足「分季度护肤」核心理念，构建<strong>春生、夏清、秋润、冬养</strong>四大完整产品矩阵，精准对应四季肌肤节律与养护需求。
+            </p>
+            <div class="gongbi-divider">
+                <svg viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20,2 L20,18" stroke="#B8956A" stroke-width="0.8" opacity="0.5"/>
+                    <circle cx="20" cy="10" r="3" stroke="#B8956A" stroke-width="0.8" fill="none" opacity="0.5"/>
+                    <path d="M10,10 L30,10" stroke="#B8956A" stroke-width="0.5" opacity="0.3"/>
+                </svg>
+            </div>
+            <div class="seasons-grid">
+                <div class="season-card active">
+                    <span class="season-icon">春</span>
+                    <div class="season-name">春生</div>
+                    <div class="season-theme">抗氧修护 · 焕亮新生</div>
+                    <div class="season-detail">
+                        <p>以桃花精粹为核心，针对春季肌肤敏感、暗沉、倦容问题</p>
+                        <p>主打抗氧提亮、舒缓修护、强韧屏障</p>
+                    </div>
+                    <div class="season-tag">已上市</div>
+                </div>
+                <div class="season-card">
+                    <span class="season-icon">夏</span>
+                    <div class="season-name">夏清</div>
+                    <div class="season-theme">清爽控油 · 净透舒缓</div>
+                    <div class="season-detail">
+                        <p>针对夏季高温出油、毛孔堵塞、晒后泛红</p>
+                        <p>主打清爽控油、净透舒缓、晒后修护</p>
+                        <p>以草本清凉能量平衡肌肤水油</p>
+                    </div>
+                    <div class="season-tag">筹备中</div>
+                </div>
+                <div class="season-card">
+                    <span class="season-icon">秋</span>
+                    <div class="season-name">秋润</div>
+                    <div class="season-theme">深层滋养 · 润燥修护</div>
+                    <div class="season-detail">
+                        <p>针对秋季干燥起皮、屏障受损、敏感加剧</p>
+                        <p>主打深层滋养、润燥修护、屏障重建</p>
+                        <p>以草本润燥精华重建肌肤屏障</p>
+                    </div>
+                    <div class="season-tag">筹备中</div>
+                </div>
+                <div class="season-card">
+                    <span class="season-icon">冬</span>
+                    <div class="season-name">冬养</div>
+                    <div class="season-theme">密集滋养 · 强韧屏障</div>
+                    <div class="season-detail">
+                        <p>针对冬季严寒干裂、胶原流失、代谢减缓</p>
+                        <p>主打密集滋养、强韧屏障、肌底养护</p>
+                        <p>以高活性草本精粹深度养护肌底</p>
+                    </div>
+                    <div class="season-tag">筹备中</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块五：春系列核心产品（圆盘成分矩阵） -->
+        <section class="spring-product">
+            <div class="product-header">
+                <div class="product-label">四季首发 · 春系标杆</div>
+                <h2 class="product-name">「桃颜」抗氧修护精华水</h2>
+                <p class="product-positioning">东方草本+现代技术 · 熬夜暗沉肌专属修护精华</p>
+            </div>
+
+            <div class="story-section">
+                <h3 class="story-title"><span>01</span> 产品灵感故事</h3>
+                <div class="story-text">
+                    <p>桃花，是东方美学中生命力与好气色的极致象征，古人赞誉<span class="quote">"服三树桃花尽，则面色红润悦泽如桃花也"</span>翻阅《神农本草经》《本草纲目》古籍记载，桃花自古拥有"令人好颜色、去雀斑、利水消肿"的养护功效，是东方古法提亮焕肤的经典草本。</p>
+                    <p style="margin-top: 15px;">当下25-35岁现代女性，长期受熬夜、工作压力、环境刺激影响，肌肤极易暗沉发黄、无光憔悴，如同蔫萎的桃花，失去原生红润通透感。</p>
+                    <p style="margin-top: 15px;">朴闻生物以此为灵感，溯源东方草本古方，结合现代肌肤痛点，打造春季专属单品——「桃颜」抗氧修护精华水。甄选优质桃花原料，采用低温萃取工艺锁住高活性营养，以温和高效的草本能量，帮助现代女性褪去暗沉黄气，重塑雨后初绽桃花般的红润、透亮、健康肌理。</p>
+                </div>
+            </div>
+
+            <div class="formula-strategy">
+                东方草本古方赋能 + 现代生物科技加持
+            </div>
+
+            <!-- 圆盘成分矩阵 -->
+            <div class="ingredients-matrix">
+                <div class="matrix-header">
+                   </div>
+
+                <div class="orbit-container">
+                    <!-- 轨道环 -->
+                    <div class="orbit-track"></div>
+                    <div class="orbit-track-inner"></div>
+
+                    <!-- 辐射连线 -->
+                    <div class="orbit-lines">
+                        <div class="orbit-line" style="transform: rotate(210deg);"></div>
+                        <div class="orbit-line" style="transform: rotate(270deg);"></div>
+                        <div class="orbit-line" style="transform: rotate(330deg);"></div>
+                        <div class="orbit-line" style="transform: rotate(30deg);"></div>
+                        <div class="orbit-line" style="transform: rotate(90deg);"></div>
+                        <div class="orbit-line" style="transform: rotate(150deg);"></div>
+                    </div>
+
+                    <!-- 分类标签 -->
+                    <div class="orbit-label orbit-label-top">东方草本复配</div>
+                    <div class="orbit-label orbit-label-bottom">现代生物科技</div>
+
+                    <!-- 中心核心：桃花提取物 -->
+                    <div class="center-core">
+                        <div class="core-icon">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20,8 C16,10 14,16 16,20 C12,18 10,24 14,26 C12,30 18,32 20,28 C22,32 28,30 26,26 C30,24 28,18 24,20 C26,16 24,10 20,8Z" stroke="#B8956A" stroke-width="1.5" fill="none" opacity="0.8"/>
+                                <circle cx="20" cy="20" r="3" fill="#B8956A" opacity="0.3"/>
+                                <path d="M20,28 L20,36" stroke="#B8956A" stroke-width="0.8" opacity="0.4"/>
+                                <path d="M16,32 Q20,30 24,32" fill="none" stroke="#B8956A" stroke-width="0.6" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <div class="core-name">桃花提取物</div>
+                        <div class="core-tag">核心成分</div>
+                    </div>
+
+                    <!-- 卫星：东方草本 -->
+                    <div class="orbit-satellite sat-herbal sat-1">
+                        <div class="sat-icon">
+                            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14,4 C10,8 10,16 14,24 C18,16 18,8 14,4Z" stroke="#7A9A6A" stroke-width="1.2" fill="none" opacity="0.8"/>
+                                <path d="M14,8 L14,20" stroke="#7A9A6A" stroke-width="0.8" opacity="0.5"/>
+                                <path d="M10,12 L18,12 M10,16 L18,16" stroke="#7A9A6A" stroke-width="0.6" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <div class="sat-name">光果甘草</div>
+                        <div class="sat-tag">天然抑黑</div>
+                    </div>
+
+                    <div class="orbit-satellite sat-herbal sat-2">
+                        <div class="sat-icon">
+                            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14" r="9" stroke="#7A9A6A" stroke-width="1.2" fill="none" opacity="0.8"/>
+                                <circle cx="14" cy="14" r="4" stroke="#7A9A6A" stroke-width="0.8" fill="none" opacity="0.5"/>
+                                <path d="M14,5 L14,9 M14,19 L14,23 M5,14 L9,14 M19,14 L23,14" stroke="#7A9A6A" stroke-width="0.6" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <div class="sat-name">积雪草</div>
+                        <div class="sat-tag">舒缓修护</div>
+                    </div>
+
+                    <div class="orbit-satellite sat-herbal sat-3">
+                        <div class="sat-icon">
+                            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8,20 C6,14 8,8 14,6 C20,8 22,14 20,20 C18,22 10,22 8,20Z" stroke="#7A9A6A" stroke-width="1.2" fill="none" opacity="0.8"/>
+                                <path d="M11,14 L17,14 M14,11 L14,17" stroke="#7A9A6A" stroke-width="0.8" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="sat-name">白芨根</div>
+                        <div class="sat-tag">细腻肤质</div>
+                    </div>
+
+                    <!-- 卫星：现代生物科技 -->
+                    <div class="orbit-satellite sat-tech sat-4">
+                        <div class="sat-icon">
+                            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14" r="9" stroke="#6A8AA0" stroke-width="1.2" fill="none" opacity="0.8"/>
+                                <circle cx="14" cy="14" r="3" fill="#6A8AA0" opacity="0.3"/>
+                                <path d="M14,5 L14,9 M14,19 L14,23 M5,14 L9,14 M19,14 L23,14" stroke="#6A8AA0" stroke-width="0.6" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <div class="sat-name">依克多因</div>
+                        <div class="sat-tag">防护盾</div>
+                    </div>
+
+                    <div class="orbit-satellite sat-tech sat-5">
+                        <div class="sat-icon">
+                            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="6" width="16" height="16" rx="3" stroke="#6A8AA0" stroke-width="1.2" fill="none" opacity="0.8"/>
+                                <path d="M10,14 L18,14 M14,10 L14,18" stroke="#6A8AA0" stroke-width="0.8" opacity="0.5"/>
+                                <circle cx="14" cy="14" r="2" fill="#6A8AA0" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <div class="sat-name">2%烟酰胺</div>
+                        <div class="sat-tag">黄金浓度</div>
+                    </div>
+
+                    <div class="orbit-satellite sat-tech sat-6">
+                        <div class="sat-icon">
+                            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14,6 C10,10 10,18 14,22 C18,18 18,10 14,6Z" stroke="#6A8AA0" stroke-width="1.2" fill="none" opacity="0.8"/>
+                                <path d="M14,10 C12,12 12,16 14,18 C16,16 16,12 14,10Z" stroke="#6A8AA0" stroke-width="0.8" fill="none" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="sat-name">双重玻尿酸</div>
+                        <div class="sat-tag">分层保湿</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块六：夏秋冬未来布局 -->
+        <section class="future-layout">
+            <h2 class="section-title">未来布局 · 四季可期</h2>
+            <p class="future-intro">
+                目前春季标杆产品已正式研发落地，夏、秋、冬系列产品正在有序打磨、迭代升级中。品牌将持续深耕草本生物科技，以古方为根、以科技为翼，为现代女性提供更专业、更精准、更贴合四季节律的东方草本护肤解决方案。
+            </p>
+            <div class="future-grid">
+                <div class="future-card">
+                    <div class="future-season">夏</div>
+                    <div class="future-name">夏清系列</div>
+                    <div class="future-desc">针对夏季高温出油、毛孔堵塞、晒后泛红等问题，主打清爽控油、净透舒缓，以草本清凉能量平衡肌肤水油，修护晒后脆弱。</div>
+                </div>
+                <div class="future-card">
+                    <div class="future-season">秋</div>
+                    <div class="future-name">秋润系列</div>
+                    <div class="future-desc">针对秋季干燥起皮、屏障受损、敏感加剧等问题，主打深层滋养、润燥修护，以草本润燥精华重建肌肤保湿屏障。</div>
+                </div>
+                <div class="future-card">
+                    <div class="future-season">冬</div>
+                    <div class="future-name">冬养系列</div>
+                    <div class="future-desc">针对冬季严寒干裂、胶原流失、代谢减缓等问题，主打密集滋养、强韧屏障，以高活性草本精粹深度养护肌底。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-brand">朴闻生物科技</div>
+            <div class="divider"></div>
+            <p class="footer-slogan">中式草本植萃 · 现代生物科技 · 分时四季护肤</p>
+        </footer>
+
+    </div>
+</body>
+</html>
